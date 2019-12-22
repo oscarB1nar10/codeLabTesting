@@ -16,11 +16,15 @@
 package com.example.android.architecture.blueprints.todoapp
 
 import androidx.lifecycle.Observer
+import java.util.*
 
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
-open class Event<out T>(private val content: T) {
+open class Event<out T>(private val content: T) : (Observable, Any) -> Unit {
+    override fun invoke(p1: Observable, p2: Any) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     @Suppress("MemberVisibilityCanBePrivate")
     var hasBeenHandled = false
